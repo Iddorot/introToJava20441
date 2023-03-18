@@ -22,8 +22,6 @@ public class Triangle
 	String finalSentence = new String("The numbers: "+ num1 + ", " + num2 + " and " + num3);
 	String rightAngleTriangleSentence = new String(finalSentence+ " represent a right-angle triangle ");
 	String commonTriangleSentence = new String(finalSentence + " represent a common triangle");
-
-        int largest = Math.max(Math.max(num1, num2), num3); //check which number is the hypotenuse
 	    
 	//calculate the power of each number
         double num1Pow =Math.pow(num1, 2);
@@ -37,29 +35,11 @@ public class Triangle
             else if(num1 == num2 || num2 == num3 || num1 ==num3){ //check if it is isosceles triangle
                 System.out.println(finalSentence+ " represent an isosceles triangle");
             }
-            else if(largest == num1){ // if num1 is the hypotenuse, check if it's right-angle
-                if(num1Pow == num2Pow + num3Pow){
-                    System.out.println(rightAngleTriangleSentence); 
-                }
-                else{
-                    System.out.println(commonTriangleSentence);
-                }
+            else if(num1Pow == num2Pow + num3Pow || num2Pow == num1Pow + num3Pow || num3Pow == num1Pow + num2Pow){ //check if it's right-angle triangle
+		System.out.println(rightAngleTriangleSentence); 
             }
-            else if(largest == num2){  // if num2 is the hypotenuse, check if it's right-angle
-                if(num2Pow == num1Pow + num3Pow){
-                    System.out.println(rightAngleTriangleSentence); 
-                }
-                else{
-                    System.out.println(commonTriangleSentence);
-                }
-            } 
-            else if(largest == num3){  // if num3 is the hypotenuse, check if it's right-angle
-                if(num3Pow == num1Pow + num2Pow){
-                    System.out.println(rightAngleTriangleSentence); 
-                }
-                else{
-                    System.out.println(commonTriangleSentence);
-                }
+	    else{
+                System.out.println(commonTriangleSentence);
             }
         } // end if
         else{
