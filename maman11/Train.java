@@ -12,7 +12,8 @@ public class Train
         Scanner sc = new Scanner(System.in);
 
         final int HOUR = 60;
-
+        
+	    // read integers from user input and assign variables
         System.out.println("Please enter 4 integers ");
         System.out.println("Please  enter the speed of the first train: ");
         int train1Speed = sc.nextInt();
