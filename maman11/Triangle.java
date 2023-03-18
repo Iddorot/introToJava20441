@@ -18,10 +18,8 @@ public class Triangle
         System.out.println("The third number: ");
         int num3 = sc.nextInt();
 
-	// output sentences variables
+	// output sentence
 	String finalSentence = new String("The numbers: "+ num1 + ", " + num2 + " and " + num3);
-	String rightAngleTriangleSentence = new String(finalSentence+ " represent a right-angle triangle ");
-	String commonTriangleSentence = new String(finalSentence + " represent a common triangle");
 	    
 	//calculate the power of each number
         double num1Pow =Math.pow(num1, 2);
@@ -36,10 +34,10 @@ public class Triangle
                 System.out.println(finalSentence+ " represent an isosceles triangle");
             }
             else if(num1Pow == num2Pow + num3Pow || num2Pow == num1Pow + num3Pow || num3Pow == num1Pow + num2Pow){ //check if it's right-angle triangle
-		System.out.println(rightAngleTriangleSentence); 
+		System.out.println(finalSentence+ " represent a right-angle triangle "); 
             }
 	    else{
-                System.out.println(commonTriangleSentence);
+                System.out.println(finalSentence + " represent a common triangle");
             }
         } // end if
         else{
