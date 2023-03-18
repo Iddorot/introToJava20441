@@ -27,6 +27,6 @@ public class Train
         int train2Distance = train2Speed * train2Time/ HOUR; // Calculate the second train distance
         float betweenDistance = Math.abs(train1Distance - train2Distance) ; // Calculate the distance between the trains
 
-        System.out.println("the distance between the trains is " + betweenDistance + "km.");
+        System.out.println("the distance between the trains is " + betweenDistance + " km.");
     } // end of method main
 } // end of class train
