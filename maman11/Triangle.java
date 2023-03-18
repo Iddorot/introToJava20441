@@ -39,7 +39,7 @@ public class Triangle
 	    else{
                 System.out.println(finalSentence + " represent a common triangle");
             }
-        } // end if
+        } // end check if triangle
         else{
             System.out.println(finalSentence + " cannot represent a triangle");
         }
