@@ -60,7 +60,7 @@ public class Triangle
             }
         } // end if
         else{
-            System.out.println(finalSentence + " can not represent a triangle ");
+            System.out.println(finalSentence + " cannot represent a triangle");
         }
 
     } // end of method main
