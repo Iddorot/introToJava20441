@@ -8,7 +8,8 @@ public class Triangle
 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-	// Read numbers from user input
+	    
+	// read numbers from user input and assign variables
         System.out.println("Please enter 3 integers ");
         System.out.println("The first number: ");
         int num1 = sc.nextInt();   
@@ -23,6 +24,8 @@ public class Triangle
 	String commonTriangleSentence = new String(finalSentence + " represent a common triangle");
 
         int largest = Math.max(Math.max(num1, num2), num3); //check which number is the hypotenuse
+	    
+	//calculate the power of each number
         double num1Pow =Math.pow(num1, 2);
         double num2Pow =Math.pow(num2, 2);
         double num3Pow =Math.pow(num3, 2);
@@ -62,6 +65,5 @@ public class Triangle
         else{
             System.out.println(finalSentence + " cannot represent a triangle");
         }
-
     } // end of method main
 } // end of class Triangle
