@@ -28,10 +28,10 @@ public class Triangle
         double num3Pow =Math.pow(num3, 2);
 
         if (num1 + num2 > num3 && num2 + num3 > num1 && num3 + num1 > num2){ //check if it is triangle
-            if(num1 == num2 && num2 == num3){
+            if(num1 == num2 && num2 == num3){ //check if it is equilateral triangle
                 System.out.println(finalSentence+ " represent an equilateral triangle  ");
             }
-            else if(num1 == num2 || num2 == num3 || num1 ==num3){
+            else if(num1 == num2 || num2 == num3 || num1 ==num3){ //check if it is isosceles triangle
                 System.out.println(finalSentence+ " represent an isosceles triangle");
             }
             else if(largest == num1){ // if num1 is the hypotenuse, check if it's right-angle
