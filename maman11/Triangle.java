@@ -19,7 +19,7 @@ public class Triangle
         int num3 = sc.nextInt();
 
 	// output sentence
-	String finalSentence = new String("The numbers: "+ num1 + ", " + num2 + " and " + num3);
+	String final SENTENCE = new String("The numbers: "+ num1 + ", " + num2 + " and " + num3);
 	    
 	//calculate the power of each number
         double num1Pow =Math.pow(num1, 2);
@@ -28,20 +28,20 @@ public class Triangle
 
         if (num1 + num2 > num3 && num2 + num3 > num1 && num3 + num1 > num2){ //check if it is triangle
             if(num1 == num2 && num2 == num3){ //check if it is equilateral triangle
-                System.out.println(finalSentence+ " represent an equilateral triangle  ");
+                System.out.println(SENTENCE+ " represent an equilateral triangle  ");
             }
             else if(num1 == num2 || num2 == num3 || num1 ==num3){ //check if it is isosceles triangle
-                System.out.println(finalSentence+ " represent an isosceles triangle");
+                System.out.println(SENTENCE+ " represent an isosceles triangle");
             }
             else if(num1Pow == num2Pow + num3Pow || num2Pow == num1Pow + num3Pow || num3Pow == num1Pow + num2Pow){ //check if it's right-angle triangle
-		System.out.println(finalSentence+ " represent a right-angle triangle "); 
+		System.out.println(SENTENCE+ " represent a right-angle triangle "); 
             }
 	    else{
-                System.out.println(finalSentence + " represent a common triangle");
+                System.out.println(SENTENCE + " represent a common triangle");
             }
         } // end check if triangle
         else{
-            System.out.println(finalSentence + " cannot represent a triangle");
+            System.out.println(SENTENCE + " cannot represent a triangle");
         }
     } // end of method main
 } // end of class Triangle
