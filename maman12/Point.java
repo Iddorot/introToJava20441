@@ -9,17 +9,17 @@ public class Point
         _x = x;
         _y = y;
 
-        if (checkIfNegative(x)){
+        if (x < MIN_VALUE){
             _x = MIN_VALUE;
         }
-        if (checkIfNegative(y)){
+        if (y < MIN_VALUE){
             _y = MIN_VALUE;
         }
     }
 
     private boolean checkIfNegative(int number){
         int numberToCheck = number;
-        if (numberToCheck<MIN_VALUE)
+        if (numberToCheck < MIN_VALUE)
         {
             return true;
         }
@@ -32,27 +32,27 @@ public class Point
     }
 
     public int getX(){
-        return (_x);
+        return _x;
     }
 
     public int getY(){
-        return (_y);
+        return _y;
     }
 
     public void setX(int xToSet){
-        if (!checkIfNegative(xToSet)){
+        if (xToSet > MIN_VALUE){
             _x = xToSet;
         }
     }
 
     public void setY(int yToSet){
-        if (!checkIfNegative(yToSet)){
+        if (yToSet > MIN_VALUE){
             _y = yToSet;
         }
     }
 
     public String toString(){
-        return "("+ _x + "," +_y + ")";
+        return "("+ _x + "," + _y + ")";
     }
 
     public boolean equals (Point other){
@@ -94,36 +94,5 @@ public class Point
     //todo public Point middle(Point P)
     //todo public double distance (Point P)
 
-    //just for my test to delete
-    public static void main(String args[]) {
-        int x = 3;
-        int y = 2;
-        Point testPoint =new Point(x, y);
-        //TEST 1 getter and setters
-        System.out.println("before test to setY -7 : " + testPoint.getY());
-        testPoint.setY(-7);
-        System.out.println("after test to setY -7: " + testPoint.getY());
-        System.out.println("before test to setX 3: " + testPoint.getX());
-        testPoint.setX(3);
-        System.out.println("after test to setX 3: " + testPoint.getX());
-
-        //TEST 2 to string Mathod
-        System.out.println("TEST 2 to string Mathod");
-        System.out.println("testPoint "+testPoint.toString()); //toString test
-        int x2 = 5;
-        int y2 = 1;
-        Point testPoint2 =new Point(x2, y2);
-        System.out.println("testPoint2 "+testPoint2.toString());
-
-        //TEST 3 boolean mathods
-        System.out.println("TEST 3 to boolean mathods");
-        System.out.println("equals test: "+ testPoint.equals(testPoint2));
-        System.out.println("isAbove test: "+ testPoint.isAbove(testPoint2)); 
-        System.out.println("isUnder test: "+ testPoint.isUnder(testPoint2)); 
-        System.out.println("isLeft test: "+ testPoint.isLeft(testPoint2)); 
-        System.out.println("isRight test: "+ testPoint.isRight(testPoint2)); 
-
-        
-    }
 }
 
