@@ -1,10 +1,10 @@
-## 📚 Intro To Java 20441
+# 📚 Intro To Java 20441
 
 This repository contains all the assessments for the Intro to Java course as part of the BSc in the Open University. Each assessment is stored in a separate folder and includes the necessary code files.
 
 <br>
 
-# 📝Assessments List
+## 📝Assessments List
 
 ✅ - Assessment completed
 
