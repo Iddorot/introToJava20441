@@ -1,0 +1,21 @@
+## 📚 Intro To Java 20441
+
+This repository contains all the assessments for the Intro to Java course as part of the BSc in the Open University. Each assessment is stored in a separate folder and includes the necessary code files.
+
+
+
+# 📝Assessments List
+
+✅ - Assessment completed
+
+🚧 - Assessment in progress
+
+📝 - Assessment not yet started
+
+
+- [Maman11](https://github.com/Iddorot/introToJava20441/tree/main/maman11) ✅
+- [Maman12](https://github.com/Iddorot/introToJava20441/tree/main/maman12) 🚧
+
+Feel free to explore the assessments and use them as a reference for your own learning.
+
+🤓 Happy coding!
