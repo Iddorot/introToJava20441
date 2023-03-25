@@ -1,9 +1,9 @@
 
 public class Point
 {
-    int _x;
-    int _y;
-    final int MIN_VALUE = 0;
+    private int _x;
+    private int _y;
+    private final int MIN_VALUE = 0;
 
     public Point(int x, int y){   
         _x = x;
@@ -15,15 +15,6 @@ public class Point
         if (y < MIN_VALUE){
             _y = MIN_VALUE;
         }
-    }
-
-    private boolean checkIfNegative(int number){
-        int numberToCheck = number;
-        if (numberToCheck < MIN_VALUE)
-        {
-            return true;
-        }
-        return false;
     }
 
     public Point(Point other){
@@ -90,9 +81,32 @@ public class Point
         return true;
     }
 
-    //todo public void move (int deltaX, int deltaY)
-    //todo public Point middle(Point P)
-    //todo public double distance (Point P)
+    public void move (int deltaX, int deltaY){
+        int newX = _x + deltaX;
+        int newY = _y + deltaY;
+        
+        if(newX >= MIN_VALUE && newY >= MIN_VALUE){
+            _x = newX;
+            _y = newY;
+        }
+        
+    }
+    
+    public Point middle(Point p){
+        int middleX = (_x + p._x) / 2;
+        int middley = (_y + p._y) / 2;
+        Point middlePoint = new Point(middleX, middley);
+        
+        return middlePoint;
+    }
+    
+    public double distance (Point p){
+        double powerX = Math.pow((_x - p._x), 2);
+        double powerY = Math.pow((_y - p._y), 2);
+        
+        double d = Math.sqrt(powerX + powerY);
+        return d;
+    }
 
 }
 
