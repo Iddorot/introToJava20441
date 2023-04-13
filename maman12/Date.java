@@ -20,9 +20,9 @@ public class Date
 
     /**
      * If the given date is valid - creates a new Date object, otherwise creates the date 1/1/2000 .
-     * @param day - the day in the month (1-31)
-     * @param month - the month in the year (1-12)
-     * @param year - the year (4 digits)
+     * @param day  the day in the month (1-31)
+     * @param month the month in the year (1-12)
+     * @param year the year (4 digits)
      */
     public Date(int day, int month, int year){
         _day = day;
@@ -38,7 +38,7 @@ public class Date
 
     /**
      * Copy constructs of a Date.
-     * @param other - the date to be copied
+     * @param other  the date to be copied
      */
     public Date(Date other){
         _day = other._day;
@@ -123,7 +123,7 @@ public class Date
 
     /**
      * Set the day (only if date remains valid)
-     * @param dayToSet - the day value to be set
+     * @param dayToSet   the day value to be set
      */
     public void setDay(int dayToSet){
         if (checkIfDateCorrect(dayToSet, _month, _year)){
@@ -133,7 +133,7 @@ public class Date
 
     /**
      * Set the month (only if date remains valid)
-     * @param monthToSet - the month value to be set
+     * @param monthToSet   the month value to be set
      */
     public void setMonth(int monthToSet){
         if (checkIfDateCorrect(_day, monthToSet, _year)){
@@ -143,7 +143,7 @@ public class Date
 
     /**
      * Set the year (only if date remains valid)
-     * @param yearToSet - the year value to be set
+     * @param yearToSet   the year value to be set
      */
     public void setYear(int yearToSet){
         if (checkIfDateCorrect(_day, _month, yearToSet)){
@@ -153,7 +153,7 @@ public class Date
 
     /**
      * Check if two dates are the same.
-     * @param other - the date to compare this date to
+     * @param other   the date to compare this date to
      * @return true if the dates are the same
      */
     public boolean equals (Date other){
@@ -165,7 +165,7 @@ public class Date
 
     /**
      * Check if this date is before other date
-     * @param other - the date to compare this date to
+     * @param other   the date to compare this date to
      * @return true if this date is before other date
      */
     public boolean before (Date other){
@@ -185,7 +185,7 @@ public class Date
 
     /**
      * Check if this date is after other date
-     * @param other - the date to compare this date to
+     * @param other   the date to compare this date to
      * @return true if this date is after other date
      */
     public boolean after (Date other){
@@ -197,7 +197,7 @@ public class Date
 
     /**
      * Calculates the difference in days between this date and other date
-     * @param other -  the date to calculate the difference between
+     * @param other    the date to calculate the difference between
      * @return the number of days between the dates (non negative value)
      */    
     public int difference(Date other){
