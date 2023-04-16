@@ -1,48 +1,56 @@
-public class PointTester {
-
+public class PointTester
+{
     public static void main(String[] args) {
-
-        // Test 1: Create a point with valid and invalid coordinates
-        System.out.println("Test 1: Create point with valid and invalid coordinates");
-        Point p1 = new Point(2, 3);
-        System.out.println("p1 = " + p1);
-        Point p2 = new Point(-1, 4);
-        System.out.println("p2 = " + p2);
-        Point p3 = new Point(5, -2);
-        System.out.println("p3 = " + p3);
-        Point p4 = new Point(-3, -4);
-        System.out.println("p4 = " + p4);
-
-        // Test 2: Get and set x and y coordinates
-        System.out.println("\nTest 2: Get and set x and y coordinates");
-        System.out.println("p1 before: " + p1);
-        p1.setX(4);
-        p1.setY(5);
-        System.out.println("p1 after: " + p1);
-
-        // Test 3: Check if two points are equal
-        System.out.println("\nTest 3: Check if two points are equal");
-        Point p5 = new Point(2, 3);
-        System.out.println("p1: " + p1);
-        System.out.println("p5: " + p5);
-        System.out.println("p1.equals(p5): " + p1.equals(p5));
-
-        // Test 4: Check if one point is above, under, left or right of another point
-        System.out.println("\nTest 4: Check if one point is above, under, left or right of another point");
-        System.out.println("p1: " + p1);
-        System.out.println("p2: " + p2);
-        System.out.println("p1.isAbove(p2): " + p1.isAbove(p2));
-        System.out.println("p1.isUnder(p2): " + p1.isUnder(p2));
-        System.out.println("p1.isLeft(p2): " + p1.isLeft(p2));
-        System.out.println("p1.isRight(p2): " + p1.isRight(p2));
-
-        // Test 5: Move a point and calculate its middle point and distance from another point
-        System.out.println("\nTest 5: Move a point and calculate its middle point and distance from another point");
-        System.out.println("p3 before move: " + p3);
-        p3.move(-3, 4);
-        System.out.println("p3 after move: " + p3);
-        System.out.println("Middle point between p1 and p3: " + p1.middle(p3));
-        System.out.println("Distance between p1 and p3: " + p1.distance(p3));
-
+        System.out.println("********** Test Point - Started **********");
+        System.out.println("\n1. Testing Constructors and toString:");
+        Point p1=new Point(20,60);
+        System.out.println("\tp1:"+p1);
+        Point p2=new Point(p1);
+        System.out.println("\tp2:"+p2);
+        System.out.println("\n2. Testing accessors and mutators:");
+        p1.setX(30);
+        p1.setY(100);
+        System.out.println("\tp1:"+p1);
+        System.out.println("\tX coordinate of p1:"+p1.getX());
+        System.out.println("\tY coordinate of p1:"+p1.getY());
+        System.out.println("\n3. Testing equals method:");
+        Point p3=new Point(50,70);
+        Point p4=new Point(50,70);
+        System.out.println("\tp3:"+p3);
+        System.out.println("\tp4:"+p4);
+        if(p3.equals(p4))
+             System.out.println("\tp3 is the same point as p4");
+        else 
+             System.out.println("\tp3 isn't the same point as p4");
+        System.out.println("\n4. Testing isAbove method:");
+        if(p3.isAbove(p1))
+             System.out.println("\tp3 is above p1");        
+        else 
+             System.out.println("\tp3 isn't above p1");     
+        System.out.println("\n5. Testing isUnder method:");
+        if(p3.isUnder(p1))
+             System.out.println("\tp3 is under p1");        
+        else 
+             System.out.println("\tp3 isn't under p1");     
+        System.out.println("\n6. Testing isLeft method:");
+        if(p3.isLeft(p1))
+             System.out.println("\tp3 is left of p1");
+        else 
+             System.out.println("\tp3 isn't left of p1");      
+        System.out.println("\n7. Testing isRight method:");
+        if(p3.isRight(p1))
+             System.out.println("\tp3 is right of p1");
+        else 
+             System.out.println("\tp3 isn't right of p1");      
+        System.out.println("\n8. Testing distance method:");
+        System.out.println("\tThe distance between dates p1 and p3 is : "+p1.distance(p3));
+        System.out.println("\n9. Testing move method:");
+        p1.move(100,200);
+        System.out.println("\tp1 after move (100,200):"+p1);
+        System.out.println("\n10. Testing middle method:");
+        System.out.println("\tThe middle between points p1 and p3 is : "+p1.middle(p3));
+        System.out.println("\n********** Test Point - Finished **********\n");
+    
     }
 }
+    

@@ -43,8 +43,8 @@ public class CityTester
         System.out.println("\tDistance between center and central station of city1:"+city1.distanceBetweenCenterAndStation());
         System.out.println("\n6. Testing newCity method based on city1 parameters (method parameters are newCityName=\"newName\" dX=50 and dY=150):");
         City city5 = city1.newCity("newName",50,150);
-        System.out.println("\tcity5 (the new city) is:\n"+city5);
-        System.out.println("\tcity5 (city1) is:\n"+city1);
+        System.out.println("\tcity5 (the new city) is(based on city 1):\n"+city5);
+        System.out.println("\tcity1 is:\n"+city1);
         System.out.println("\n7. Testing cityEstablishedBetweenDates method:");
         Date d2 = new Date(10,10,1900);
         System.out.println("\tcity5 established date " + city5.getDateEstablished());

@@ -6,6 +6,7 @@
  */
 public class City
 {   
+    //instance variables
     private String _cityName;
     private Date _dateEstablished;
     private Point _cityCenter;
@@ -23,7 +24,7 @@ public class City
      * @param dayEstablished The day the city was established
      * @param monthEstablished The month the city was established
      * @param yearEstablished The year the city was established
-     * @param centerX The x coordinate of the city's center* @param 
+     * @param centerX The x coordinate of the city's center
      * @param centerY The y coordinate of the city's center
      * @param stationX The x coordinate of the city's central station
      * @param stationY The y coordinate of the city's central station
@@ -36,10 +37,9 @@ public class City
         _dateEstablished = new Date(dayEstablished, monthEstablished, yearEstablished);
         _cityCenter = new Point(centerX, centerY);
         _centralStation = new Point(stationX, stationY);
-        _numOfResidents = numOfResidents;
         _noOfNeighborhoods = noOfNeighborhoods;
-
         _numOfResidents = numOfResidents;
+
         if(numOfResidents < MIN_NUM_OF_RESIDETNS){
             _numOfResidents = MIN_NUM_OF_RESIDETNS; 
         }
@@ -51,7 +51,7 @@ public class City
 
     /**
      * Copy constructor for cities. Construct a city with the same attributes as another city.
-     * @param other - The City object from which to construct the new city.
+     * @param other The City object from which to construct the new city.
      */
     public City(City other){
         _cityName = other._cityName;
@@ -137,7 +137,6 @@ public class City
      */
     public void setDateEstablished (Date dateEst){
         _dateEstablished = new Date(dateEst);
-
     }
 
     /**
@@ -173,6 +172,7 @@ public class City
      */
     public void setNumOfNeighborhoods(int numOfNeighborhoods){
         _noOfNeighborhoods = numOfNeighborhoods;
+
         if (numOfNeighborhoods < MIN_NUM_OF_NEIGHBORHOOS){
             _noOfNeighborhoods = MIN_NUM_OF_NEIGHBORHOOS;
         }
@@ -184,9 +184,9 @@ public class City
      * @return true if the cities are the same
      */
     public boolean equals(City other){
-        if(_cityName.equals(other.getCityName()) && _dateEstablished.equals(other.getDateEstablished())&&
-        _cityCenter.equals(other.getCityCenter()) && _centralStation.equals(other.getCentralStation()) &&
-        _numOfResidents == other.getNumOfResidents() && _noOfNeighborhoods == other.getNumOfNeighborhoods()){
+        if(_cityName.equals(other._cityName) && _dateEstablished.equals(other._dateEstablished)&&
+        _cityCenter.equals(other._cityCenter) && _centralStation.equals(other._centralStation) &&
+        _numOfResidents == other._numOfResidents && _noOfNeighborhoods == other._noOfNeighborhoods){
             return true;
         }
         return false; 
@@ -199,10 +199,13 @@ public class City
      */
     public boolean addResidents(long residentsUpdate){
         long newNumOfResidetns = _numOfResidents + residentsUpdate;
-        setNumOfResidents(newNumOfResidetns);
-        if (MIN_NUM_OF_RESIDETNS != _numOfResidents){
+
+        if (MIN_NUM_OF_RESIDETNS <= newNumOfResidetns){
+            _numOfResidents = newNumOfResidetns;
             return true;
         }
+
+        _numOfResidents = MIN_NUM_OF_RESIDETNS;
         return false;
 
     }
@@ -233,14 +236,20 @@ public class City
      * @return a new city
      */
     public City newCity(String newCityName, int dX, int dY){
-        City newCity = new City(newCityName,0,0,0,0,0,0,0,MIN_NUM_OF_RESIDETNS,MIN_NUM_OF_NEIGHBORHOOS);
+        City newCity = new City(this);
 
+        newCity.setCityName(newCityName);
         newCity.setDateEstablished(_dateEstablished.tomorrow());
-        newCity.setCityCenter(_cityCenter);
-        newCity.getCityCenter().move(dX, dY);
+        newCity._numOfResidents = MIN_NUM_OF_RESIDETNS; 
+        newCity._noOfNeighborhoods = MIN_NUM_OF_NEIGHBORHOOS;
 
-        newCity.setCentralStation(_centralStation);
-        newCity.moveCentralStation(dX, dY);
+        Point newCityCenter = new Point(_cityCenter);
+        newCityCenter.move(dX, dY);
+        newCity.setCityCenter(newCityCenter);
+
+        Point newCentralStation = new Point(_centralStation);
+        newCentralStation.move(dX, dY);
+        newCity.setCentralStation(newCentralStation);
 
         return newCity;
     }
@@ -271,6 +280,5 @@ public class City
     public int establishmentDateDiff(City other){
         return _dateEstablished.difference(other._dateEstablished);
     }
-
 }
 

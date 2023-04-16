@@ -11,12 +11,24 @@ public class Date
     private int _year;
 
     private final int MIN_DAY = 1;
+    private final int SHORT_MONTH_DAYS = 30;
+    private final int FEB_DAYS = 28;
     private final int MAX_DAY = 31;
-    private final int MIN_MONTH = 1;
-    private final int MAX_MONTH = 12;
     private final int MIN_YEAR = 1000;
     private final int MAX_YEAR = 9999;
     private final int DEF_YEAR = 2000;
+    private final int JAN = 1;
+    private final int FEB = 2;
+    private final int MAR = 3;
+    private final int APR = 4;
+    private final int MAY = 5;
+    private final int JUN = 6;
+    private final int JUL = 7;
+    private final int AUG = 8;
+    private final int SEP = 9;
+    private final int OCT = 10;
+    private final int NOV = 11;
+    private final int DEC = 12;
 
     /**
      * If the given date is valid - creates a new Date object, otherwise creates the date 1/1/2000 .
@@ -31,7 +43,7 @@ public class Date
             _year = year;
         } else {
             _day = MIN_DAY;
-            _month = MIN_MONTH;
+            _month = JAN;
             _year = DEF_YEAR;
         }
     }
@@ -48,20 +60,22 @@ public class Date
 
     //check if date is correct
     private boolean checkIfDateCorrect (int day, int month, int year){
-        if ((MIN_DAY > day || MAX_DAY < day ) || (MIN_MONTH > month || MAX_MONTH < month) || (MIN_YEAR > year || MAX_YEAR < year) ){
+        if ((MIN_DAY > day || MAX_DAY < day ) || 
+        (JAN > month || DEC < month) || 
+        (MIN_YEAR > year || MAX_YEAR < year) ){
             return false;
         }
         switch (month){
-            case 2:
-                if (day > 28){
+            case FEB:
+                if (day > FEB_DAYS){
                     return false;
                 }
                 return true;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                if (day > 30){
+            case APR:
+            case JUN:
+            case SEP:
+            case NOV:
+                if (day > SHORT_MONTH_DAYS){
                     return false;
                 }
                 return true;
@@ -207,18 +221,21 @@ public class Date
     public Date tomorrow(){
         int nextDay = _day+1;
         if (!checkIfDateCorrect(nextDay, _month, _year)){
+            
             int nextMonth = _month + 1;
             if(!checkIfDateCorrect(MIN_DAY, nextMonth, _year)){
+                
                 int nextYear = _year +1;
-                Date tomorrowDate = new Date(MIN_DAY, MIN_MONTH, nextYear);
+                Date tomorrowDate = new Date(MIN_DAY, JAN, nextYear);
                 return tomorrowDate;
             }
+            
             Date tomorrowDate = new Date(MIN_DAY, nextMonth, _year);
             return tomorrowDate;
         }
+        
         Date tomorrowDate = new Date(nextDay, _month, _year);
         return tomorrowDate;
-
     }
 }
 

@@ -4,7 +4,8 @@
  * @version 1.0
  */
 public class Point
-{
+{   
+    //instance variables
     private int _x;
     private int _y;
     private final int MIN_VALUE = 0;
@@ -53,21 +54,21 @@ public class Point
 
     /**
      * Changes the x coordinate of the point. If a negative number is received, the x coordinate will not be changed.
-     * @param xToSet The new x coordinate
+     * @param num The new x coordinate
      */
-    public void setX(int xToSet){
-        if (xToSet > MIN_VALUE){
-            _x = xToSet;
+    public void setX(int num){
+        if (num >= MIN_VALUE){
+            _x = num;
         }
     }
 
     /**
      * Changes the y coordinate of the point. If a negative number is received, the y coordinate will not be changed.
-     * @param yToSet The new y coordinate
+     * @param num The new y coordinate
      */
-    public void setY(int yToSet){
-        if (yToSet > MIN_VALUE){
-            _y = yToSet;
+    public void setY(int num){
+        if (num >= MIN_VALUE){
+            _y = num;
         }
     }
 
@@ -162,8 +163,8 @@ public class Point
      */
     public Point middle(Point p){
         int middleX = (_x + p._x) / 2;
-        int middley = (_y + p._y) / 2;
-        Point middlePoint = new Point(middleX, middley);
+        int middleY = (_y + p._y) / 2;
+        Point middlePoint = new Point(middleX, middleY);
 
         return middlePoint;
     }

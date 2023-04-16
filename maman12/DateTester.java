@@ -16,7 +16,7 @@ public class DateTester {
         // Test 2: Get and set day, month and year
         System.out.println("\nTest 2: Get and set day, month and year");
         System.out.println("date1's year before: " + date1.getYear());
-        date1.setYear(2341);
+        System.out.println("Set date1' year to 2341: " + date1.getYear());date1.setYear(2341);
         System.out.println("date1's year after: " + date1.getYear());
         
         // Test 3: Check if two dates are equal, before or after
