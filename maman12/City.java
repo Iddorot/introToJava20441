@@ -245,6 +245,12 @@ public class City
         return newCity;
     }
 
+    /**
+     * Check if the city establish date is between two given dates (including these dates). the given dates are not necessarily in order.
+     * @param date1  the first given date
+     * @param date2  the second given date
+     * @return true if the city establish date is between the two given dates
+     */
     public boolean cityEstablishedBetweenDates(Date date1, Date date2){
         if (_dateEstablished.equals(date1) || _dateEstablished.equals(date2)){
             return true;
@@ -255,6 +261,15 @@ public class City
         else {
             return false;
         }
+    }
+
+    /**
+     * This method calculates the difference in days between the establishment date of this city and the city given as a parameter
+     * @param other the city given as a parameter to find the difference
+     * @return the number of days differ between this city establishment date to the other city establishment date
+     */
+    public int establishmentDateDiff(City other){
+        return _dateEstablished.difference(other._dateEstablished);
     }
 
 }
