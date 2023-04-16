@@ -39,8 +39,14 @@ public class City
         _numOfResidents = numOfResidents;
         _noOfNeighborhoods = noOfNeighborhoods;
 
-        setNumOfResidents(numOfResidents);
-        setNumOfNeighborhoods(noOfNeighborhoods);
+        _numOfResidents = numOfResidents;
+        if(numOfResidents < MIN_NUM_OF_RESIDETNS){
+            _numOfResidents = MIN_NUM_OF_RESIDETNS; 
+        }
+        _noOfNeighborhoods = noOfNeighborhoods;
+        if (noOfNeighborhoods < MIN_NUM_OF_NEIGHBORHOOS){
+            _noOfNeighborhoods = MIN_NUM_OF_NEIGHBORHOOS;
+        }
     }
 
     /**
@@ -239,13 +245,17 @@ public class City
         return newCity;
     }
 
-   /** public boolean cityEstablishedBetweenDates(Date date1, Date date2){
-        if (_dateEstablished.equals(date1)||_dateEstablished.equals(date2)){
+    public boolean cityEstablishedBetweenDates(Date date1, Date date2){
+        if (_dateEstablished.equals(date1) || _dateEstablished.equals(date2)){
             return true;
-        } else if((_dateEstablished.after(date1) && _dateEstablished.before(date2)) || 
-          (_dateEstablished.after(date2) && _dateEstablished.before(date1)))
-          
-        {
-
-        }*/
+        }
+        else if((_dateEstablished.after(date1) && _dateEstablished.before(date2)) || (_dateEstablished.after(date2) && _dateEstablished.before(date1))) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
+
+}
+

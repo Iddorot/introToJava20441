@@ -25,11 +25,11 @@ public class Date
      * @param year the year (4 digits)
      */
     public Date(int day, int month, int year){
-        _day = day;
-        _month = month;
-        _year = year; 
-
-        if (!checkIfDateCorrect(day, month, year)){
+        if (checkIfDateCorrect(day, month, year)){
+            _day = day;
+            _month = month;
+            _year = year;
+        } else {
             _day = MIN_DAY;
             _month = MIN_MONTH;
             _year = DEF_YEAR;
@@ -169,18 +169,10 @@ public class Date
      * @return true if this date is before other date
      */
     public boolean before (Date other){
-        if (_year < other._year){
-            return true;
-        }
-        if (_year == other._year){
-            if (_month < other._month){
-                return true;
-            }
-            if(_month == other._month && _day < other._day){
-                return true;
-            }
-        }
-        return false;
+        return 
+        (_year < other._year) ||
+        (_year == other._year && _month < other._month) ||
+        (_year == other._year && _month == other._month && _day < other._day);
     }
 
     /**
@@ -226,7 +218,7 @@ public class Date
         }
         Date tomorrowDate = new Date(nextDay, _month, _year);
         return tomorrowDate;
-        
+
     }
 }
 

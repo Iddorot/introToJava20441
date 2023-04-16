@@ -43,14 +43,16 @@ public class CityTester
         System.out.println("\tDistance between center and central station of city1:"+city1.distanceBetweenCenterAndStation());
         System.out.println("\n6. Testing newCity method based on city1 parameters (method parameters are newCityName=\"newName\" dX=50 and dY=150):");
         City city5 = city1.newCity("newName",50,150);
-        System.out.println("\tcity5 (the new city) is:\n"+city5);       
-        /*System.out.println("\n7. Testing cityEstablishedBetweenDates method:");
-        Date d2 = new Date(10,10,2020);
+        System.out.println("\tcity5 (the new city) is:\n"+city5);
+        System.out.println("\tcity5 (city1) is:\n"+city1);
+        System.out.println("\n7. Testing cityEstablishedBetweenDates method:");
+        Date d2 = new Date(10,10,1900);
+        System.out.println("\tcity5 established date " + city5.getDateEstablished());
         if(city5.cityEstablishedBetweenDates(d1,d2))
         System.out.println("\tcity5 was established between " + d1 + " and " + d2);
         else 
         System.out.println("\tcity5 wasn't established between " + d1 + " and " + d2);
-        System.out.println("\n8. Testing establishmentDateDiff method:");
+        /*System.out.println("\n8. Testing establishmentDateDiff method:");
         System.out.println("\tDiffernce of establishment dates between city5 and city3: " + city5.establishmentDateDiff(city3));
         System.out.println("\n********** Test City - Finished **********\n");
          */
