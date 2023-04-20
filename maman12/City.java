@@ -55,9 +55,9 @@ public class City
      */
     public City(City other){
         _cityName = other._cityName;
-        _dateEstablished = other._dateEstablished;
-        _cityCenter = other._cityCenter;
-        _centralStation = other._centralStation;
+        _dateEstablished = new Date(other._dateEstablished);
+        _cityCenter = new Point(other._cityCenter);
+        _centralStation =  new Point(other._centralStation);
         _numOfResidents = other._numOfResidents;
         _noOfNeighborhoods = other._noOfNeighborhoods;
     }
