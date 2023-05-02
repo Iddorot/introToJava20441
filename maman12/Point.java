@@ -110,10 +110,10 @@ public class Point
      * @return True if the received point is below to this point
      */
     public boolean isUnder(Point other){
-        if(isAbove(other)){
-            return false;
+        if(other.isAbove(this)){
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**
@@ -134,10 +134,10 @@ public class Point
      * @return True if the received point is right of other point
      */
     public boolean isRight(Point other){
-        if(isLeft(other)){
-            return false;
+        if(other.isLeft(this)){
+            return true;
         }
-        return true;
+        return false;
     }
     
     /**
