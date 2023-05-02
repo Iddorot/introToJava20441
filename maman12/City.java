@@ -88,7 +88,7 @@ public class City
      * @return The city's established Date
      */
     public Date getDateEstablished (){
-        return _dateEstablished;
+        return new Date(this.dateEstablished);
     }
 
     /**
@@ -96,7 +96,7 @@ public class City
      * @return The city's center
      */
     public Point getCityCenter(){
-        return _cityCenter;
+        return new Point(this.cityCenter);
     }
 
     /**
@@ -104,7 +104,7 @@ public class City
      * @return The city's central station
      */
     public Point getCentralStation(){
-        return _centralStation;
+        return new Point(this.centralStation);
     }
 
     /**
