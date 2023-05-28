@@ -49,6 +49,9 @@ public class Ex13 {
      */
     public static int missingValue (int [] arr){
         int mainD = (arr[arr.length -1]- arr[0])/arr.length;
+        if (arr.length == 2){
+            return (arr[arr.length -1] - mainD);
+        }
         return binarySearch(arr, mainD);
 
     }
@@ -56,6 +59,7 @@ public class Ex13 {
     private static int binarySearch(int [] arr, int mainD){
         int low = 0, high = arr.length;
         int mid, lowD, highD;
+        
 
         while (high - low != 1){
             mid = (low + high)/2;

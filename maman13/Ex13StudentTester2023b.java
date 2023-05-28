@@ -22,13 +22,13 @@ public class Ex13StudentTester2023b
         System.out.println("----------------------------------------");
         
         {
-            int []arr = {7,10,13,16,22,25};
-            System.out.println("arr: [7,10,13,16,22,25]");
+            int []arr = {4,8};
+            System.out.println("arr: [4,8]");
             int result2=Ex13.missingValue(arr);
-            if (result2==19)
-                System.out.println("Passed, result is 19");
+            if (result2==6)
+                System.out.println("Passed, result is 6");
             else
-                System.out.println("Failed,  expected: 19  student's result: "+result2);
+                System.out.println("Failed,  expected: 6  student's result: "+result2);
         }
         
         System.out.println("----------------------------------------");
