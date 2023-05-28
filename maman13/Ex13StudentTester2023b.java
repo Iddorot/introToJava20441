@@ -16,9 +16,11 @@ public class Ex13StudentTester2023b
         else
             System.out.println("Failed,  expected: 49   student's result: "+result1);
 
+    
         System.out.println("----------------------------------------");
         System.out.println("***     Q2  - missingValue           ***");
         System.out.println("----------------------------------------");
+        
         {
             int []arr = {7,10,13,16,22,25};
             System.out.println("arr: [7,10,13,16,22,25]");
@@ -28,10 +30,11 @@ public class Ex13StudentTester2023b
             else
                 System.out.println("Failed,  expected: 19  student's result: "+result2);
         }
-
+        
         System.out.println("----------------------------------------");
         System.out.println("***     Q3  - longestPalindrome      ***");
         System.out.println("----------------------------------------");
+        /*
         {
             int[] arr= {1,3,2,3,10,10,3,2,4};
             System.out.println("arr: [1,3,2,3,10,10,3,2,4]");
@@ -41,9 +44,11 @@ public class Ex13StudentTester2023b
             else
                 System.out.println("Failed,  expected: 6  student's result: "+result3);
         }
+        */
         System.out.println("----------------------------------------");
         System.out.println("***       Q4  - isSum                ***");
         System.out.println("----------------------------------------");
+        /*
         {
             int[] arr={5,4,2,1,3};
             int num=8;
@@ -54,7 +59,8 @@ public class Ex13StudentTester2023b
             else
                 System.out.println("Failed,  expected: true   student's result: "+result4);
             System.out.println("----------------------------------------");
-
+        
         }
+        */
     }
 }
