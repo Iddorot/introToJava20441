@@ -44,7 +44,6 @@ public class Ex13 {
      *
      * @param arr Array the arithmetic sequence array with one missing number.
      * @return The missing number.
-     *
      * 
      */
     public static int missingValue (int [] arr){
@@ -56,25 +55,25 @@ public class Ex13 {
 
     }
 
-    private static int binarySearch(int [] arr, int mainD){
-        int low = 0, high = arr.length;
+    private static int binarySearch(int[] arr, int mainD) {
+        int low = 0, high = arr.length - 1; // Initialize the low and high indices
         int mid, lowD, highD;
-        
 
-        while (high - low != 1){
-            mid = (low + high)/2;
-            lowD = (arr[mid] - arr[low])/ (mid - low);
-            highD = (arr[high-1] - arr[mid])/ (high - mid - 1);
+        while (high - low > 1) {
+            mid = (low + high) / 2; // Calculate the middle index
+            lowD = (arr[mid] - arr[low]) / (mid - low); // Calculate the difference divided by the distance for the lower part
+            highD = (arr[high] - arr[mid]) / (high - mid); // Calculate the difference divided by the distance for the higher part
 
-            if (lowD != mainD){
-                high = mid;
+            if (lowD != mainD) {
+                high = mid; // If the difference is not equal to the main difference for the lower part, update the high index
             }
 
-            if (highD != mainD){
-                low = mid;
+            if (highD != mainD) {
+                low = mid; // If the difference is not equal to the main difference for the higher part, update the low index
             }
+        }
 
-        };
-        return arr[high] - mainD;   
+        return arr[high] - mainD; // Return the missing value by subtracting the main difference from the element at the high index
     }
+
 }
