@@ -77,21 +77,26 @@ public class Ex13 {
         return arr[high] - mainD; // Return the missing value by subtracting the main difference from the element at the high index
     }
 
+    /**
+     * Calculates the length of the largest palindromic sequence in the given array. using helper method
+     *
+     * @param arr The input array of integers.
+     * @return The length of the largest palindromic sequence.
+     */
     public static int longestPalindrome (int[] arr){
-        int start = arr[0];
-        int end = arr[arr.length - 1];
+        int start = 0;
+        int end = arr.length - 1;
         return longestPalindrome(arr,start, end);
 
     }
 
     private static int longestPalindrome(int[] arr, int start, int end){
-        // Base case:
-        if (start > end){
-            // Empty array or invalid range
+        int length1, length2;
+
+        if (start > end){ // Empty array or invalid range
             return 0;
         }
-        if (start == end){
-            // Single element in the array
+        if (start == end){ // Single element in the array
             return 1; 
         }
 
@@ -109,7 +114,7 @@ public class Ex13 {
         length2 = longestPalindrome(arr, start, end - 1);
 
         // Return the length of the longest palindromic sequence obtained from the two subarrays
-        return max(length1, length2);
+        return Math.max(length1, length2);
     }
 
 }
