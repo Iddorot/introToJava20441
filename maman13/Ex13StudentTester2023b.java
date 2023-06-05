@@ -16,7 +16,6 @@ public class Ex13StudentTester2023b
         else
             System.out.println("Failed,  expected: 49   student's result: "+result1);
 
-    
         System.out.println("----------------------------------------");
         System.out.println("***     Q2  - missingValue           ***");
         System.out.println("----------------------------------------");        
@@ -29,11 +28,11 @@ public class Ex13StudentTester2023b
             else
                 System.out.println("Failed,  expected: 19  student's result: "+result2);
         }
-        
+
         System.out.println("----------------------------------------");
         System.out.println("***     Q3  - longestPalindrome      ***");
         System.out.println("----------------------------------------");
-        
+
         {
             int[] arr = {1, 2, 3, 2, 1, 2, 3, 2, 1};
             System.out.println("arr: [1, 2, 3, 2, 1, 2, 3, 2, 1]");
@@ -43,23 +42,46 @@ public class Ex13StudentTester2023b
             else
                 System.out.println("Failed,  expected:  9  student's result: "+result3);
         }
-        
+
         System.out.println("----------------------------------------");
         System.out.println("***       Q4  - isSum                ***");
         System.out.println("----------------------------------------");
-        
+
         {
-            int[] arr={5,4,2,1,3};
-            int num=8;
-            System.out.println("arr: [5,4,2,1,3]  num: 8");
-            boolean result4=Ex13.isSum(arr, num);
-            if (result4==true)
+            int[] arr = {5, 4, 2, 1, 3};
+            int num = 8;
+            System.out.println("arr: [5, 4, 2, 1, 3]  num: 8");
+            boolean result4 = Ex13.isSum(arr, num);
+            if (result4)
                 System.out.println("Passed, result is true");
             else
-                System.out.println("Failed,  expected: true   student's result: "+result4);
+                System.out.println("Failed,  expected: true   student's result: " + result4);
             System.out.println("----------------------------------------");
-        
         }
-        
+
+        {
+            int[] arr = {1, 2, 3, 4, 5};
+            int num = 10;
+            System.out.println("arr: [1, 2, 3, 4, 5]  num: 10");
+            boolean result5 = Ex13.isSum(arr, num);
+            if (result5)
+                System.out.println("Passed, result is true");
+            else
+                System.out.println("Failed,  expected: true   student's result: " + result5);
+            System.out.println("----------------------------------------");
+        }
+
+        {
+            int[] arr = {2, 4, 6, 8, 10};
+            int num = 15;
+            System.out.println("arr: [2, 4, 6, 8, 10]  num: 15");
+            boolean result6 = Ex13.isSum(arr, num);
+            if (!result6)
+                System.out.println("Passed, result is false");
+            else
+                System.out.println("Failed,  expected: false   student's result: " + result6);
+            System.out.println("----------------------------------------");
+        }
+
     }
 }

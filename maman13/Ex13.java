@@ -118,10 +118,10 @@ public class Ex13 {
     }
 
     public static boolean isSum (int[] arr, int num){
-        return isSum(arr, num, 0);
+        return isSum(arr, num, 0, 0);
     }
 
-    private static boolean isSum (int[] arr, int num, int index){
+    private static boolean isSum (int[] arr, int num, int index, int countAdjacent){
         //base cases:
         if (num == 0) {  //Empty set is subset of all sets
             return true;
@@ -129,13 +129,17 @@ public class Ex13 {
         if(index >= arr.length){ // Reached the end of the array
             return false;
         }
- 
+        if (countAdjacent >= 3) { // Reached the maximum number of adjacent elements
+            return false;
+        }
+
         // Exclude the current element and check for subset sum
-        boolean exclude = isSum(arr, num, index + 1);
+        boolean exclude = isSum(arr, num, index + 1, 0);
 
         // Include the current element and check for subset sum
-        boolean include = isSum(arr, num - arr[index], index + 3);
+        boolean include = isSum(arr, num - arr[index], index + 1, countAdjacent + 1);
 
         return exclude || include;
+
     }
 }
