@@ -47,7 +47,7 @@ public class Ex13StudentTester2023b
         System.out.println("----------------------------------------");
         System.out.println("***       Q4  - isSum                ***");
         System.out.println("----------------------------------------");
-        /*
+        
         {
             int[] arr={5,4,2,1,3};
             int num=8;
@@ -60,6 +60,6 @@ public class Ex13StudentTester2023b
             System.out.println("----------------------------------------");
         
         }
-        */
+        
     }
 }

@@ -84,15 +84,15 @@ public class Ex13 {
      * @return The length of the largest palindromic sequence.
      */
     public static int longestPalindrome (int[] arr){
-        int start = 0;
         int end = arr.length - 1;
-        return longestPalindrome(arr,start, end);
+        return longestPalindrome(arr,0, end);
 
     }
 
     private static int longestPalindrome(int[] arr, int start, int end){
         int length1, length2;
 
+        //base cases:
         if (start > end){ // Empty array or invalid range
             return 0;
         }
@@ -118,22 +118,24 @@ public class Ex13 {
     }
 
     public static boolean isSum (int[] arr, int num){
-        int start = 0;
-        int end = arr.length - 1;
-        
-        if (num == 0){ // Empty set is subset of every array
-            return true;
-        }
-        if(start == end && arr[start] == num){ // Single element
-            return true; 
-        }
-        
-        return isSum(arr, num, start, end);
+        return isSum(arr, num, 0);
     }
 
-    private static boolean isSum (int[] arr, int num, int start, int end){
-        boolean flag = false;
+    private static boolean isSum (int[] arr, int num, int index){
+        //base cases:
+        if (num == 0) {  //Empty set is subset of all sets
+            return true;
+        }
+        if(index >= arr.length){ // Reached the end of the array
+            return false;
+        }
+ 
+        // Exclude the current element and check for subset sum
+        boolean exclude = isSum(arr, num, index + 1);
 
-        return flag; 
+        // Include the current element and check for subset sum
+        boolean include = isSum(arr, num - arr[index], index + 3);
+
+        return exclude || include;
     }
 }
