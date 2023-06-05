@@ -100,7 +100,7 @@ public class Ex13 {
             return 1; 
         }
 
-        // Recursive cases:
+        // Recursive cases
         if (arr[start] == arr[end]){
             // First and last elements are the same
             // Include them in the palindrome and check the remaining subarray
@@ -117,4 +117,23 @@ public class Ex13 {
         return Math.max(length1, length2);
     }
 
+    public static boolean isSum (int[] arr, int num){
+        int start = 0;
+        int end = arr.length - 1;
+        
+        if (num == 0){ // Empty set is subset of every array
+            return true;
+        }
+        if(start == end && arr[start] == num){ // Single element
+            return true; 
+        }
+        
+        return isSum(arr, num, start, end);
+    }
+
+    private static boolean isSum (int[] arr, int num, int start, int end){
+        boolean flag = false;
+
+        return flag; 
+    }
 }
