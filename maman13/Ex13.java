@@ -117,6 +117,14 @@ public class Ex13 {
         return Math.max(length1, length2);
     }
 
+    /**
+     * Returns true if there is a subset of the elements of the array whose sum is equal to the given number,
+     * and satisfies the conditions of no repetitions and no three adjacent members. using recurrsive helper
+     *
+     * @param arr the array of positive integers
+     * @param num the target sum
+     * @return true if a subset with the target sum and satisfying the conditions exists, false otherwise
+     */
     public static boolean isSum (int[] arr, int num){
         return isSum(arr, num, 0, 0);
     }
