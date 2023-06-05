@@ -77,4 +77,39 @@ public class Ex13 {
         return arr[high] - mainD; // Return the missing value by subtracting the main difference from the element at the high index
     }
 
+    public static int longestPalindrome (int[] arr){
+        int start = arr[0];
+        int end = arr[arr.length - 1];
+        return longestPalindrome(arr,start, end);
+
+    }
+
+    private static int longestPalindrome(int[] arr, int start, int end){
+        // Base case:
+        if (start > end){
+            // Empty array or invalid range
+            return 0;
+        }
+        if (start == end){
+            // Single element in the array
+            return 1; 
+        }
+
+        // Recursive cases:
+        if (arr[start] == arr[end]){
+            // First and last elements are the same
+            // Include them in the palindrome and check the remaining subarray
+            return 2 + longestPalindrome(arr, start + 1, end - 1);
+
+        }
+
+        // First and last elements are different
+        // Check two subarrays: one excluding the first element and another excluding the last element
+        length1 = longestPalindrome(arr, start + 1, end);
+        length2 = longestPalindrome(arr, start, end - 1);
+
+        // Return the length of the longest palindromic sequence obtained from the two subarrays
+        return max(length1, length2);
+    }
+
 }
