@@ -19,17 +19,18 @@ public class Ex13 {
         dp2[0] = road2[0];
 
         for (int i = 1; i < n; i++) {
-            dp1[i] = dp1[i-1] + road1[i];
+            dp1[i] = dp1[i - 1] + road1[i]; // Calculate the accumulated time for road 1
         }
 
         for (int i = 1; i < n; i++) {
-            dp2[i] = dp2[i-1] + road2[i];
+            dp2[i] = dp2[i - 1] + road2[i]; // Calculate the accumulated time for road 2
         }
 
-        int minTime = Math.min(dp1[n-1], dp2[n-1]);
+        int minTime = Math.min(dp1[n - 1], dp2[n - 1]); // Initialize the minimum time with the last segment of each road
 
         for (int i = 1; i < n; i++) {
-            int time = Math.min(dp1[i-1], dp2[i-1]) + Math.min(dp1[n-1] - dp1[i-1], dp2[n-1] - dp2[i-1]);
+            // Calculate the time for switching roads at segment i and determine the minimum time
+            int time = Math.min(dp1[i - 1], dp2[i - 1]) + Math.min(dp1[n - 1] - dp1[i - 1], dp2[n - 1] - dp2[i - 1]);
             minTime = Math.min(minTime, time);
         }
 
