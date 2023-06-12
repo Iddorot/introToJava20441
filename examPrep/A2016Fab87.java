@@ -1,5 +1,5 @@
 
-public class fA2016Fab87
+public class A2016Fab87
 {
     //Q1
     public static int minDiff(int[] arr){
